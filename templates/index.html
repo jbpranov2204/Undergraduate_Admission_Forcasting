@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GradCast</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        text-align: center;
+        color: #333;
+    }
+    label {
+        display: block;
+        margin-bottom: 8px;
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>GRADCAST</h2>
+    <form id="predictionForm" action="/predict" method="post">
+        
+        <label for="cutoff">Cutoff</label>
+        <input type="text" id="cutoff" name="cutoff" required>
+
+        <label for="rank">Rank</label>
+        <input type="text" id="rank" name="rank" required>
+
+        <label for="community">Community</label>
+        <input type="text" id="community" name="community">
+        <button type="submit">Predict</button>
+    </form>
+    <br>
+    <br>
+</div>
+<center>
+<h5 class="text-center" style="color: rgb(255, 38, 0); font-weight: 700; font-size: 1.4rem;">{{prediction_text}}</h5>
+<p class="pt-2 text-center" style="color: rgb(23, 7, 255); font-size: 1.2rem; font-weight: 600;">{{prediction}}</p>
+</center>
+</body>
+</html>
+
